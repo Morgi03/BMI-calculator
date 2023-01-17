@@ -90,7 +90,7 @@ class App extends Component<{}, State> {
               <span className="mertekegyseg">kg</span>
             </span>
           </p>
-          <button onClick={this.bmicalc}>Számítás</button>
+          <button id="btn" onClick={this.bmicalc}>Számítás</button>
         </div>
         <div>
           <h2 className="orangehp">A ÖN BMI ÉRTÉKE: {this.state.bmival}</h2>
