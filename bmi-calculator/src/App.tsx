@@ -118,10 +118,12 @@ class App extends Component<{}, State> {
           </table>
         </div>
         <h2 className="orangehp">AZ IDEÁLIS TESTTÖMEGE: {this.state.appro} KG</h2>
-        <div>
-        <span id="minWeight">{this.state.minw} - {this.state.maxw} kg</span>
-        <p id="goodvals">Kívánatos szélső értékek</p>
-        </div>
+        <table id='footer'>
+          <tr id="trfooter">
+        <td><span id="minWeight">{this.state.minw} - {this.state.maxw} kg</span></td>
+        <td><p id="goodvals">Kívánatos szélső értékek</p></td>
+        </tr>
+        </table>
       </div>
     );
   }

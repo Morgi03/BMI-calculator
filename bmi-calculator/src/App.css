@@ -82,6 +82,16 @@ td {
 #btn {
   width: 100px;
   height: 45px;
-  background: #ffae1a;
-  color: black;
+  background: #ffffff;
+  color: #f3953e;
+  font-size: 13pt;
+  border: none;
+  font-weight: bold;
+}
+#footer {
+  border: none;
+  margin: 0;
+}
+#trfooter {
+  border: none;
 }
