@@ -74,30 +74,33 @@ class App extends Component<{}, State> {
         <div>
           <h2 className="orangehp">A ÖN BMI ÉRTÉKE: {this.state.bmival}</h2>
           <table>
-            <tr className={(this.state.bmival < 18.5) ? "selection" : "nothing"}>
+            <tr className={(this.state.bmival <= 18.5) ? "selection" : "nothing"}>
               <td className="firstcol">18,5 vagy kevesebb</td>
               <td>SOVÁNY</td>
             </tr>
-            <tr className={(this.state.bmival < 18.5) ? "selection" : "nothing"}>
+            <tr className={(this.state.bmival > 18.5 && this.state.bmival < 25) ? "selection" : "nothing"}>
               <td className="firstcol">18,5 - 24,9</td>
               <td>NORMÁL</td>
             </tr>
-            <tr className={(this.state.bmival < 18.5) ? "selection" : "nothing"}>
-              <td className="firstcol">30 - 34,9</td>
+            <tr className={(this.state.bmival >= 25  && this.state.bmival < 35) ? "selection" : "nothing"}>
+              <td className="firstcol">25 - 34,9</td>
               <td>I. FOKÚ ELHÍZÁS</td>
             </tr>
-            <tr className={(this.state.bmival < 18.5) ? "selection" : "nothing"}>
+            <tr className={(this.state.bmival >= 35 && this.state.bmival < 40) ? "selection" : "nothing"}>
               <td className="firstcol">35 - 39,9</td>
               <td>II. FOKÚ ELHÍZÁS</td>
             </tr>
-            <tr className={(this.state.bmival < 18.5) ? "selection" : "nothing"} id='lasttr'>
+            <tr className={(this.state.bmival >= 40) ? "selection" : "nothing"} id='lasttr'>
               <td className="firstcol">40 vagy több</td>
               <td>III. FOKÚ ELHÍZÁS</td>
             </tr>
           </table>
         </div>
         <h2 className="orangehp">AZ IDEÁLIS TESTTÖMEGE:  KG</h2>
-        <span>Kívánatos szélső értékek</span>
+        <div>
+        <span id="minWeight">0 - 0 kg</span>
+        <p id="goodvals">Kívánatos szélső értékek</p>
+        </div>
       </div>
     );
   }

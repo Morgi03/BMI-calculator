@@ -59,4 +59,22 @@ td {
 .firstcol {
   font-weight: bold;
   text-align: center;
+  margin: auto;
+}
+
+#goodvals {
+  text-align: center;
+  color: black;
+}
+
+#minWeight {
+  color: #f3953e;
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: left;
+}
+ 
+.selection {
+  background-color: #f3953e;
+  color: #ffffff;
 }
