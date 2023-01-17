@@ -38,4 +38,25 @@ p {
   display: inline-flex;
 }
 
-
+table {
+  color: black;
+  margin: auto;
+  display: table;
+  font-size: 15pt;
+  border-collapse: collapse;
+  width: 710px;
+}
+tr {
+  height: 63px;
+  border-bottom: 1px solid black;
+}
+#lasttr {
+  border-bottom: 0px;
+}
+td {
+  width: 230px;
+}
+.firstcol {
+  font-weight: bold;
+  text-align: center;
+}
