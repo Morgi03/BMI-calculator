@@ -7,6 +7,9 @@ interface State {
   bmival: number;
   height: number;
   weight: number;
+  appro: number;
+  minw: number,
+  maxw: number,
 }
 
 class App extends Component<{}, State> {
@@ -17,6 +20,9 @@ class App extends Component<{}, State> {
       bmival: 0,
       height: 0,
       weight: 0,
+      appro: 0,
+      minw: 0,
+      maxw: 0,
     };
   }
 
@@ -40,6 +46,21 @@ class App extends Component<{}, State> {
         Math.round(
           (this.state.weight / Math.pow(this.state.height / 100, 2)) * 100
         ) / 100,
+    });
+    this.ideal();
+    this.kivszel();
+  };
+
+  ideal = () => {
+    this.setState({
+        appro: Math.round((Math.pow(this.state.height / 100, 2) * 24) * 100) / 100,
+    });
+  };
+
+  kivszel = () => {
+    this.setState({
+        maxw: Math.round((Math.pow(this.state.height / 100, 2) * 24.99) * 100) / 100,
+        minw: Math.round((Math.pow(this.state.height / 100, 2) * 18.51) * 100) / 100,
     });
   };
 
@@ -96,9 +117,9 @@ class App extends Component<{}, State> {
             </tr>
           </table>
         </div>
-        <h2 className="orangehp">AZ IDEÁLIS TESTTÖMEGE:  KG</h2>
+        <h2 className="orangehp">AZ IDEÁLIS TESTTÖMEGE: {this.state.appro} KG</h2>
         <div>
-        <span id="minWeight">0 - 0 kg</span>
+        <span id="minWeight">{this.state.minw} - {this.state.maxw} kg</span>
         <p id="goodvals">Kívánatos szélső értékek</p>
         </div>
       </div>
